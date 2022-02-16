@@ -7,12 +7,6 @@
   align-items: center;
   padding-top: 150px;
   position: relative;
-  > h1 {
-    font-size: 50px;
-    font-weight: bold;
-    line-height: 70px;
-    margin-bottom: 100px;
-  }
   .couponWrapper {
     display: flex;
     flex-direction: column;
@@ -31,19 +25,58 @@
       top: 80px;
       left: 121px;
     }
-    .speechBubble {
+    .speechBubbleOn {
       width: 213px;
       height: 47px;
       position: absolute;
       top: 135px;
       right: 180px;
+      transition-duration: 1.2s;
+      display: flex;
+      visibility: visible;
     }
-    .appDownload {
+    .speechBubbleOff {
+      width: 213px;
+      height: 47px;
+      position: absolute;
+      top: 80px;
+      right: 180px;
+      display: flex;
+      visibility: hidden;
+    }
+    .appDownloadOn {
       width: 257px;
       height: 70px;
       position: absolute;
-      top: 213px;
+      top: 200px;
+      right: 154px;
+      transition-duration: 1.2s;
+      cursor: pointer;
+    }
+
+    .appDownloadOff {
+      width: 257px;
+      height: 70px;
+      position: absolute;
+      top: 170px;
       right: 154px;
     }
   }
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 70px;
+  margin-bottom: 100px;
+  position: relative;
+  opacity: 0;
+}
+
+.titleTransform {
+  @extend .title;
+  top: 100px;
+  opacity: 1;
+  transition: 1s;
+  transform: translateY(-100px);
 }
